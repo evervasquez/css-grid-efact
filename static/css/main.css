@@ -1,0 +1,81 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Cantarell, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 14px !important;
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 
+    [header-start] 55px 
+    [header-end contenido-start] auto 
+    [contenido-end footer-start] 40px 
+    [footer-end];
+}
+
+header{
+    grid-row: header-start / contenido-start;
+    background: #fff;
+    border-bottom: 1px solid rgba(9, 30, 66, .12);
+}
+
+footer{
+    background: #fff;
+    border-top: 1px solid rgba(9, 30, 66, .12);
+    grid-row: footer-start / contenido-end;
+    
+}
+
+article{
+    background-color: #f4f5f7;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 
+    [content-title-start] 100px 
+    [content-title-end content-main-start] 1fr 
+}
+
+.content-title{
+    border: 1px solid red;
+    grid-row: content-title-start / content-main-start;
+    font-size: 18px !important;
+    align-self: center;
+    justify-self: center;
+}
+
+.content-main{
+    border: 1px solid red;
+    grid-row: 1fr;
+    max-width: 1130px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-rows: 
+        [grid-actions-start] 50px
+        [grid-content-start] 1fr
+        [grid-paginator-start] 50px;
+}
+
+.grid-actions{
+    border: 1px solid red;
+    background-color: yellow;
+}
+
+.grid-content{
+    border: 1px solid red;
+    background-color: white;
+}
+
+.grid-paginator{
+    border: 1px solid red;
+}
