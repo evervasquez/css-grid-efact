@@ -49,7 +49,6 @@ article{
 }
 
 .content-main{
-    border: 1px solid red;
     grid-row: 1fr;
     max-width: 1130px;
     margin: 0 auto;
@@ -64,18 +63,56 @@ article{
         [grid-actions-start] 50px
         [grid-content-start] 1fr
         [grid-paginator-start] 50px;
+    height: 100%;
 }
 
 .grid-actions{
-    border: 1px solid red;
-    background-color: yellow;
+    background-color: white;
+    height: 100%;
 }
 
 .grid-content{
-    border: 1px solid red;
     background-color: white;
 }
 
 .grid-paginator{
+    display: grid;    
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 
+        [row-logo-start] 1fr 
+        [row-logo-end row-info-start] 3fr 
+        [row-info-end row-users-start] 1fr
+        [row-users-end row-actions-start] 1fr
+        [row-actions-end];
+    grid-template-rows: 1fr;
+    height: 80px;
+    border-bottom: 1px solid rgba(9, 30, 66, .12);
+}
+
+.row-logo{
+    padding: 0 10px;
+    grid-column: row-logo-start / row-info-start;
+}
+
+.row-info{
     border: 1px solid red;
+    grid-column: row-logo-end / row-users-start;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    padding: 2px;
+}
+
+
+.row-users{
+    border: 1px solid red;
+    grid-column: row-users-start / row-users-end;
+}
+
+.row-actions{
+    border: 1px solid red;
+    grid-column: row-actions-start / row-actions-end;
 }
